@@ -21,7 +21,7 @@ import { JsonRpcProvider } from 'ethers';
 import { BaseContract, CHAIN_ID, NEON_CORE_API_RPC_URL, NEON_CORE_API_URL, SOLANA_URL } from './utils';
 
 const networkUrls = [{
-  id: 111,
+  id: 245022926,
   token: 'NEON',
   solana: SOLANA_URL,
   neonProxy: NEON_CORE_API_RPC_URL,
@@ -104,7 +104,7 @@ function SolanaNativeApp() {
       await solanaProvider.connect();
       if (solanaProvider.publicKey) {
         setPublicKey(solanaProvider.publicKey);
-        await solanaAirdrop(connection, solanaProvider.publicKey, 21e9);
+      //  await solanaAirdrop(connection, solanaProvider.publicKey, 21e9);
       }
     } else {
       await solanaProvider.disconnect();
@@ -151,7 +151,7 @@ function SolanaNativeApp() {
       });
 
       const treasuryPool = createScheduledTransaction.instructions[0].keys[2].pubkey;
-      await solanaAirdrop(connection, treasuryPool, 21e9);
+     // await solanaAirdrop(connection, treasuryPool, 21e9);
 
       try {
         if (account === null) {
